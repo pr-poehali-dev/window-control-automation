@@ -61,7 +61,7 @@ const Index = () => {
               <h1 className="text-3xl md:text-4xl font-bold leading-tight">
                 Умное управление <span className="text-primary">микроклиматом</span>
               </h1>
-              <p className="text-base md:text-lg text-muted-foreground">
+              <p className="text-sm md:text-base text-muted-foreground">
                 Автоматизированная система контроля окон на основе датчиков температуры, влажности и качества воздуха
               </p>
               <div className="flex gap-4">
