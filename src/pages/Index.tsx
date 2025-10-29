@@ -58,7 +58,7 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 animate-fade-in">
-              <h1 className="text-3xl md:text-4xl font-bold leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 Умное управление <span className="text-primary">микроклиматом</span>
               </h1>
               <p className="text-sm md:text-base text-muted-foreground">
@@ -107,7 +107,7 @@ const Index = () => {
                 </div>
                 <h3 className="text-2xl font-semibold">Здоровый микроклимат</h3>
                 <p className="text-muted-foreground">
-                  Автоматический контроль CO₂, влажности и температуры для комфортного самочувствия
+                  Автоматический контроль влажности и температуры для комфортного самочувствия
                 </p>
               </CardContent>
             </Card>
