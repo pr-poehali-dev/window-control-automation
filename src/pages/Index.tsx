@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Icon from "@/components/ui/icon";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const Index = () => {
   const [formData, setFormData] = useState({
@@ -18,6 +18,24 @@ const Index = () => {
     alert("Спасибо за заявку! Мы свяжемся с вами в ближайшее время.");
     setFormData({ name: "", phone: "", message: "" });
   };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = document.querySelectorAll('.animate-on-scroll, .animate-on-scroll-left, .animate-on-scroll-right');
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">
@@ -68,9 +86,9 @@ const Index = () => {
 
       <section id="features" className="py-20 px-4 bg-secondary/30">
         <div className="container mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16">Преимущества системы</h2>
+          <h2 className="text-4xl font-bold text-center mb-16 animate-on-scroll">Преимущества системы</h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="border-none shadow-lg hover:shadow-xl transition-shadow animate-fade-in">
+            <Card className="border-none shadow-lg hover:shadow-xl transition-shadow animate-on-scroll">
               <CardContent className="pt-8 text-center space-y-4">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10">
                   <Icon name="Leaf" size={32} className="text-primary" />
@@ -82,7 +100,7 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="border-none shadow-lg hover:shadow-xl transition-shadow animate-fade-in" style={{ animationDelay: '0.1s' }}>
+            <Card className="border-none shadow-lg hover:shadow-xl transition-shadow animate-on-scroll">
               <CardContent className="pt-8 text-center space-y-4">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10">
                   <Icon name="Heart" size={32} className="text-primary" />
@@ -94,7 +112,7 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="border-none shadow-lg hover:shadow-xl transition-shadow animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <Card className="border-none shadow-lg hover:shadow-xl transition-shadow animate-on-scroll">
               <CardContent className="pt-8 text-center space-y-4">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10">
                   <Icon name="Clock" size={32} className="text-primary" />
@@ -111,9 +129,9 @@ const Index = () => {
 
       <section id="capabilities" className="py-20 px-4">
         <div className="container mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16">Возможности управления</h2>
+          <h2 className="text-4xl font-bold text-center mb-16 animate-on-scroll">Возможности управления</h2>
           <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-            <div className="flex gap-4 animate-fade-in">
+            <div className="flex gap-4 animate-on-scroll-left">
               <div className="flex-shrink-0">
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
                   <Icon name="Smartphone" size={24} className="text-primary" />
@@ -127,7 +145,7 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="flex gap-4 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+            <div className="flex gap-4 animate-on-scroll-right">
               <div className="flex-shrink-0">
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
                   <Icon name="Radio" size={24} className="text-primary" />
@@ -141,7 +159,7 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="flex gap-4 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <div className="flex gap-4 animate-on-scroll-left">
               <div className="flex-shrink-0">
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
                   <Icon name="Gauge" size={24} className="text-primary" />
@@ -155,7 +173,7 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="flex gap-4 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+            <div className="flex gap-4 animate-on-scroll-right">
               <div className="flex-shrink-0">
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
                   <Icon name="Settings" size={24} className="text-primary" />
@@ -169,7 +187,7 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="flex gap-4 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            <div className="flex gap-4 animate-on-scroll-left">
               <div className="flex-shrink-0">
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
                   <Icon name="Shield" size={24} className="text-primary" />
@@ -183,7 +201,7 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="flex gap-4 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+            <div className="flex gap-4 animate-on-scroll-right">
               <div className="flex-shrink-0">
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
                   <Icon name="Zap" size={24} className="text-primary" />
@@ -202,9 +220,9 @@ const Index = () => {
 
       <section id="reviews" className="py-20 px-4 bg-secondary/30">
         <div className="container mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16">Отзывы клиентов</h2>
+          <h2 className="text-4xl font-bold text-center mb-16 animate-on-scroll">Отзывы клиентов</h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="border-none shadow-lg">
+            <Card className="border-none shadow-lg animate-on-scroll">
               <CardContent className="pt-8 space-y-4">
                 <div className="flex gap-1 text-primary">
                   {[...Array(5)].map((_, i) => (
@@ -221,7 +239,7 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="border-none shadow-lg">
+            <Card className="border-none shadow-lg animate-on-scroll">
               <CardContent className="pt-8 space-y-4">
                 <div className="flex gap-1 text-primary">
                   {[...Array(5)].map((_, i) => (
@@ -238,7 +256,7 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="border-none shadow-lg">
+            <Card className="border-none shadow-lg animate-on-scroll">
               <CardContent className="pt-8 space-y-4">
                 <div className="flex gap-1 text-primary">
                   {[...Array(5)].map((_, i) => (
@@ -260,11 +278,11 @@ const Index = () => {
 
       <section id="contact" className="py-20 px-4">
         <div className="container mx-auto max-w-2xl">
-          <h2 className="text-4xl font-bold text-center mb-4">Получить консультацию</h2>
-          <p className="text-center text-muted-foreground mb-12">
+          <h2 className="text-4xl font-bold text-center mb-4 animate-on-scroll">Получить консультацию</h2>
+          <p className="text-center text-muted-foreground mb-12 animate-on-scroll">
             Оставьте заявку и наш специалист свяжется с вами в течение 30 минут
           </p>
-          <Card className="border-none shadow-lg">
+          <Card className="border-none shadow-lg animate-on-scroll">
             <CardContent className="pt-8">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-2">
