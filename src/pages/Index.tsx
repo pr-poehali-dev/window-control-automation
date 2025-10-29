@@ -23,7 +23,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <header className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 border-b border-border">
         <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="text-2xl font-bold text-primary">SmartWindow</div>
+          <div className="text-2xl font-bold text-primary">ВЕТЕР</div>
           <div className="hidden md:flex gap-8">
             <a href="#features" className="text-foreground hover:text-primary transition-colors">Преимущества</a>
             <a href="#capabilities" className="text-foreground hover:text-primary transition-colors">Возможности</a>
@@ -40,11 +40,10 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 animate-fade-in">
-              <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-                Умное управление<br />
-                <span className="text-primary">микроклиматом</span>
+              <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+                Умное управление <span className="text-primary">микроклиматом</span>
               </h1>
-              <p className="text-xl text-muted-foreground">
+              <p className="text-lg text-muted-foreground">
                 Автоматизированная система контроля окон на основе датчиков температуры, влажности и качества воздуха
               </p>
               <div className="flex gap-4">
@@ -59,7 +58,7 @@ const Index = () => {
             <div className="animate-scale-in">
               <img 
                 src="https://cdn.poehali.dev/projects/f08a5d91-180c-4e61-bf81-b88fdc10a515/files/a08e8e50-92f8-4928-a939-a88147070a89.jpg" 
-                alt="SmartWindow система управления"
+                alt="ВЕТЕР система управления"
                 className="rounded-2xl shadow-2xl w-full"
               />
             </div>
@@ -317,7 +316,7 @@ const Index = () => {
       <footer className="py-12 px-4 border-t border-border">
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="text-2xl font-bold text-primary">SmartWindow</div>
+            <div className="text-2xl font-bold text-primary">ВЕТЕР</div>
             <div className="flex gap-6 text-sm text-muted-foreground">
               <a href="#" className="hover:text-primary transition-colors">Политика конфиденциальности</a>
               <a href="#" className="hover:text-primary transition-colors">Условия использования</a>
