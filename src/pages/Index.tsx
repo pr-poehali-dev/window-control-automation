@@ -54,11 +54,18 @@ const Index = () => {
         </nav>
       </header>
 
-      <section className="pt-32 pb-20 px-4">
-        <div className="container mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+      <section className="pt-32 pb-20 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://cdn.poehali.dev/projects/f08a5d91-180c-4e61-bf81-b88fdc10a515/files/a08e8e50-92f8-4928-a939-a88147070a89.jpg" 
+            alt="ВЕТЕР система управления"
+            className="w-full h-full object-cover opacity-20"
+          />
+        </div>
+        <div className="container mx-auto relative z-10">
+          <div className="max-w-3xl">
             <div className="space-y-6 animate-fade-in">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
                 Умное управление <span className="text-primary">микроклиматом</span>
               </h1>
               <p className="text-sm md:text-base text-muted-foreground">
@@ -72,13 +79,6 @@ const Index = () => {
                   <a href="#capabilities">Узнать больше</a>
                 </Button>
               </div>
-            </div>
-            <div className="animate-scale-in">
-              <img 
-                src="https://cdn.poehali.dev/projects/f08a5d91-180c-4e61-bf81-b88fdc10a515/files/a08e8e50-92f8-4928-a939-a88147070a89.jpg" 
-                alt="ВЕТЕР система управления"
-                className="rounded-2xl shadow-2xl w-full"
-              />
             </div>
           </div>
         </div>
@@ -95,7 +95,7 @@ const Index = () => {
                 </div>
                 <h3 className="text-2xl font-semibold">Экономия энергии</h3>
                 <p className="text-muted-foreground">
-                  До 40% экономии на отоплении и кондиционировании благодаря оптимальной вентиляции
+                  На 45% экономнее, чем аналоги
                 </p>
               </CardContent>
             </Card>
@@ -312,7 +312,7 @@ const Index = () => {
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="message" className="text-sm font-medium">
-                    Сообщение
+                    Комментарий
                   </label>
                   <Textarea
                     id="message"
@@ -340,7 +340,7 @@ const Index = () => {
               <a href="#" className="hover:text-primary transition-colors">Условия использования</a>
             </div>
             <div className="text-sm text-muted-foreground">
-              © 2024 SmartWindow. Все права защищены.
+              © 2025 Ветер. Все права защищены.
             </div>
           </div>
         </div>
